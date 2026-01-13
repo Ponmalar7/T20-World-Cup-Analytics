@@ -1,0 +1,70 @@
+:root{
+	--accent:#ff2d95; /* pink */
+	--muted:#6b7280;
+	--card:#ffffffcc;
+	--bg-overlay: rgba(0,0,0,0.45);
+}
+html,body{height:100%}
+body{
+	font-family: Inter, Roboto, Arial, Helvetica, sans-serif;
+	margin:0;
+	color:#111827;
+	background: linear-gradient(180deg, #0f172a 0%, #071033 100%);
+	background-attachment: fixed;
+}
+main{max-width:1100px;margin:40px auto;padding:24px;position:relative}
+/* optional background image (place a file at frontend/images/t20-bg.jpg) */
+body::before{
+	content:'';
+	position:fixed;inset:0;
+	background-image: url('images/t20-bg.jpg');
+	background-size:cover;background-position:center;
+	filter: blur(2px) brightness(0.6) contrast(0.95);
+	z-index:0;opacity:0.9
+}
+main::before{content:'';position:absolute;inset:0;background:var(--bg-overlay);z-index:0;border-radius:8px}
+main > *{position:relative;z-index:1}
+h1{color:var(--card);background:linear-gradient(90deg,var(--accent),#7c3aed);-webkit-background-clip:text;background-clip:text;color:transparent;font-size:28px;margin:0 0 12px}
+section{background:var(--card);padding:14px;border-radius:8px;margin-bottom:14px;box-shadow:0 6px 18px rgba(2,6,23,0.4)}
+canvas{background:transparent;border-radius:6px;padding:6px}
+pre{background:#0b1220;color:#e6eef8;padding:10px;border-radius:6px}
+form{margin-bottom:10px;display:flex;gap:8px;align-items:center}
+label{margin-right:6px;color:var(--muted)}
+#uploadStatus{margin-top:6px;color:var(--muted);white-space:pre-wrap}
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.btn.secondary{background:#374151}
+.small{font-size:13px;color:var(--muted)}
+
+/* Header */
+.app-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+.brand{display:flex;gap:12px;align-items:center}
+.logo{width:56px;height:56px;border-radius:8px;background:linear-gradient(90deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+
+.controls{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(44, 35, 35, 0.01));padding:12px;border-radius:8px;box-shadow:0 6px 18px rgba(2,6,23,0.35);flex:1}
+.inline-form{display:flex;gap:8px;align-items:center}
+.filter-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input[type="file"]{background:transparent;color:var(--muted)}
+input,select{padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.03);color:var(--card)}
+.btn{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.btn.secondary{background:#374151}
+
+.summary pre{white-space:pre-wrap}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chart{min-height:260px}
+
+/* backend status */
+.status-dot{font-size:18px;margin-right:6px}
+.status-dot.unknown{color:gold}
+.status-dot.ok{color:#10b981}
+.status-dot.fail{color:#ef4444}
+
+/* spinner */
+.spinner{display:inline-block;width:18px;height:18px;border:3px solid rgba(255,255,255,0.12);border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media (max-width:900px){
+	.grid{grid-template-columns:1fr}
+	.controls{flex-direction:column}
+}

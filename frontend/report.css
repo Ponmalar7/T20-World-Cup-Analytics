@@ -1,0 +1,11 @@
+/* Black & Pink report theme */
+:root{--bg:#0b0b0f;--accent:#ff2d95;--muted:#9ca3af}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:#fff;font-family:Inter,Arial,Helvetica,sans-serif}
+main{max-width:900px;margin:36px auto;padding:24px}
+h1{color:var(--accent);margin:0 0 14px}
+section{background:#0f1114;padding:12px;border-radius:8px;margin-bottom:12px;border:1px solid rgba(255,45,149,0.08)}
+.table{display:flex;flex-direction:column;gap:6px}
+.row{display:flex;justify-content:space-between;padding:6px 8px;border-radius:6px}
+.row:nth-child(even){background:rgba(255,45,149,0.03)}
+.small{color:var(--muted);font-size:13px}

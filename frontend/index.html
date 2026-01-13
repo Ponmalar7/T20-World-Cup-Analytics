@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>T20 World Cup Analytics</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main>
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo">T20</div>
+        <div>
+          <h1>T20 World Cup — Analytics</h1>
+          <div class="small">Quick insights — sales, runs, wins</div>
+        </div>
+      </div>
+      <div class="status">
+        <span id="backendStatus" class="status-dot unknown">●</span>
+        <span id="backendMessage" class="small">Connecting…</span>
+      </div>
+    </header>
+
+    <section class="controls">
+      <div class="card">
+        <h3>Upload Matches CSV</h3>
+        <form id="uploadForm" class="inline-form">
+          <input type="file" id="csvFile" accept=".csv" />
+          <button type="submit" class="btn">Upload</button>
+        </form>
+        <div id="uploadStatus" class="small"></div>
+      </div>
+
+      <div class="card">
+        <h3>Filters</h3>
+        <div class="filter-row">
+          <label>Team: <input id="filterTeam" placeholder="team name"/></label>
+          <label>Start: <input id="filterStart" type="date"/></label>
+          <label>End: <input id="filterEnd" type="date"/></label>
+          <button id="applyFilters" class="btn">Apply</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="summary card">
+      <h3>Summary</h3>
+      <pre id="summary">Loading…</pre>
+    </section>
+
+    <section class="grid">
+      <div class="chart card">
+        <h3>Team Wins</h3>
+        <canvas id="winsChart" width="600" height="300"></canvas>
+      </div>
+      <div class="chart card">
+        <h3>Team Runs</h3>
+        <canvas id="runsChart" width="600" height="300"></canvas>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
