@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 T20 World Cup Analytics — Minimal Full-Stack Example
 
 Overview:
@@ -32,3 +33,7 @@ Next steps you can ask me for:
 - Add upload UI to import CSVs.
 - Add filters (by team, date range) and more charts.
 - Dockerfile + deployment instructions.
+=======
+# T20-World-Cup-Analytics
+T20 World Cup — Analytics is a Python-based data analytics project that explores match and player data from the T20 World Cup to uncover meaningful insights and performance trends.
+>>>>>>> fcc056e5b37123884bf0681f8959729faee0adaf
